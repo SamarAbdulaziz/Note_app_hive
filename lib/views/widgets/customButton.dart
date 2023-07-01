@@ -10,17 +10,19 @@ class CustomButton extends StatelessWidget {
   double fontSize;
   FontWeight fontWeight;
   VoidCallback onTap;
+  bool isLoading;
 
   CustomButton(
       {super.key,
       required this.title,
       required this.onTap,
-      this.buttonColor =kPrimaryColor,
+      this.buttonColor = kPrimaryColor,
       this.textColor = Colors.black,
       this.circularRadius = 10.0,
       this.fontSize = 16,
       this.height = 55,
-      this.fontWeight = FontWeight.bold});
+      this.fontWeight = FontWeight.bold,
+      this.isLoading = false});
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +39,19 @@ class CustomButton extends StatelessWidget {
             ),
           ),
         ),
-        child: Text(
-          title,
-          style: TextStyle(
-            fontWeight: fontWeight,
-            color: textColor,
-            fontSize: fontSize,
-          ),
-        ),
+        child: isLoading
+            ? CircularProgressIndicator(
+          color: Colors.black,
+
+        )
+            : Text(
+                title,
+                style: TextStyle(
+                  fontWeight: fontWeight,
+                  color: textColor,
+                  fontSize: fontSize,
+                ),
+              ),
       ),
     );
   }
