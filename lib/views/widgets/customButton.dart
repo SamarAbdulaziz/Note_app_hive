@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:notes_app_tharwat_samy/constant.dart';
 
 class CustomButton extends StatelessWidget {
-  String title;
-  Color buttonColor;
-  Color textColor;
-  double circularRadius;
-  double height;
-  double fontSize;
-  FontWeight fontWeight;
-  VoidCallback onTap;
-  bool isLoading;
+  final String title;
+  final Color buttonColor;
+  final Color textColor;
+  final double circularRadius;
+  final double height;
+  final double fontSize;
+  final FontWeight fontWeight;
+  final VoidCallback onTap;
+  final bool isLoading;
 
-  CustomButton(
+  const CustomButton(
       {super.key,
       required this.title,
       required this.onTap,
@@ -26,32 +26,36 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 16.0),
       width: MediaQuery.of(context).size.width,
       height: height,
-      child: ElevatedButton(
-        onPressed: onTap,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: buttonColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              circularRadius,
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: height,
+        child: ElevatedButton(
+          onPressed: onTap,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: buttonColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                circularRadius,
+              ),
             ),
           ),
-        ),
-        child: isLoading
-            ? CircularProgressIndicator(
-          color: Colors.black,
-
-        )
-            : Text(
-                title,
-                style: TextStyle(
-                  fontWeight: fontWeight,
-                  color: textColor,
-                  fontSize: fontSize,
+          child: isLoading
+              ? const CircularProgressIndicator(
+                  color: Colors.black,
+                )
+              : Text(
+                  title,
+                  style: TextStyle(
+                    fontWeight: fontWeight,
+                    color: textColor,
+                    fontSize: fontSize,
+                  ),
                 ),
-              ),
+        ),
       ),
     );
   }
