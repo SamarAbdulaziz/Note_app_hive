@@ -23,7 +23,7 @@ class EditNoteView extends StatelessWidget {
           CustomIcon(icon: Icons.check),
         ],
       ),
-      body: const EditNoteViewBody(),
+      body:  EditNoteViewBody(),
     );
   }
 }
