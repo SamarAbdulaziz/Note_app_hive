@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app_tharwat_samy/views/widgets/custom_text_field.dart';
 
-class EditNoteViewBody extends StatelessWidget {
-   EditNoteViewBody({
+class EditNoteViewBody extends StatefulWidget {
+  const EditNoteViewBody({
     super.key,
   });
 
+  @override
+  State<EditNoteViewBody> createState() => _EditNoteViewBodyState();
+}
+
+class _EditNoteViewBodyState extends State<EditNoteViewBody> {
   final TextEditingController titleController = TextEditingController();
+
   final TextEditingController subTitleController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
           CustomTextFormField(
