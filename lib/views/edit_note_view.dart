@@ -13,17 +13,17 @@ class EditNoteView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: Text(
+        title: const Text(
           'Edit Note',
           style: TextStyle(
             fontSize: 28,
           ),
         ),
         actions: [
-          CustomIcon(icon: Icons.check),
+          const CustomIcon(icon: Icons.check),
         ],
       ),
-      body:  EditNoteViewBody(),
+      body:  const EditNoteViewBody(),
     );
   }
 }

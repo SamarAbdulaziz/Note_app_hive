@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:notes_app_tharwat_samy/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app_tharwat_samy/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app_tharwat_samy/models/note_model.dart';
 import 'package:notes_app_tharwat_samy/views/widgets/customButton.dart';
 import 'package:notes_app_tharwat_samy/views/widgets/custom_text_field.dart';
@@ -31,11 +33,14 @@ class _AddNoteFormState extends State<AddNoteForm> {
           key: formKey,
           autovalidateMode: autoValidateMode,
           child: Padding(
-            padding:  EdgeInsets.only(
+            padding: EdgeInsets.only(
               top: 16.0,
               left: 16.0,
               right: 16.0,
-              bottom: MediaQuery.of(context).viewInsets.bottom,
+              bottom: MediaQuery
+                  .of(context)
+                  .viewInsets
+                  .bottom,
             ),
             child: Column(
               children: [
@@ -61,12 +66,15 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     //todo
                     if (formKey.currentState!.validate()) {
                       // formKey.currentState!.save(); //???
+                      var formattedDate = DateFormat.yMMMMd().add_jm().format(
+                          DateTime.now());
                       BlocProvider.of<AddNoteCubit>(context).addNote(NotesModel(
                         title: titleController.text,
                         subtitle: subTitleController.text,
-                        date: DateTime.now().toString(), //todo
-                        color: Colors.pink.value, //todo
+                        date: formattedDate, //todo
+                        color: Colors.teal.value, //todo
                       ));
+                      BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                     } else {
                       autoValidateMode = AutovalidateMode.always;
                       setState(() {});

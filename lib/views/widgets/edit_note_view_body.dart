@@ -25,7 +25,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             hint: 'Title',
             controller: titleController,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           CustomTextFormField(
