@@ -9,8 +9,7 @@ class NotesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<NotesCubit, NotesState>(
-      listener: (context, state) {},
+    return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
         List<NotesModel> notes =
             BlocProvider.of<NotesCubit>(context).notes ?? [];
