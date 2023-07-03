@@ -17,7 +17,7 @@ class CustomNoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, EditNoteView.routeName,arguments: note);
+        Navigator.pushNamed(context, EditNoteView.routeName, arguments: note);
       },
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 24.0),
@@ -53,6 +53,18 @@ class CustomNoteItem extends StatelessWidget {
                   onPressed: () {
                     note.delete();
                     BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: const Text(
+                          'Note Deleted',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        backgroundColor: Colors.red[300],
+                      ),
+                    );
                   },
                   icon: const Icon(
                     FontAwesomeIcons.trash,
@@ -71,52 +83,5 @@ class CustomNoteItem extends StatelessWidget {
         ),
       ),
     );
-
-    // Container(
-    //   height: 180.0,
-    //   padding: EdgeInsets.all(16.0),
-    //   margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-    //   decoration: BoxDecoration(
-    //     color: Colors.yellow[300],
-    //     borderRadius: BorderRadius.circular(16.0),
-    //   ),
-    //   child: Column(
-    //     crossAxisAlignment: CrossAxisAlignment.start,
-    //     children: [
-    //       Row(
-    //         children: [
-    //           const Text(
-    //             'Flutter Tips ',
-    //             style: TextStyle(
-    //                 fontSize: 24.0,
-    //                 fontWeight: FontWeight.bold,
-    //                 color: Colors.black),
-    //           ),
-    //           const Spacer(),
-    //           IconButton(
-    //               onPressed: () {},
-    //               icon: const Icon(Icons.delete, color: Colors.black)),
-    //         ],
-    //       ),
-    //       const Text(
-    //         'Build an exciting app with flutter',
-    //         style: TextStyle(
-    //           color: Colors.black45,
-    //         ),
-    //       ),
-    //       Spacer(),
-    //       Row(
-    //         mainAxisAlignment: MainAxisAlignment.end,
-    //         children: [
-    //           Text(
-    //             'May 21, 2021',
-    //             style: TextStyle(
-    //               color: Colors.black45,
-    //             ),
-    //           ),
-    //         ],
-    //       ),
-    //     ],
-    //   ));
   }
 }
