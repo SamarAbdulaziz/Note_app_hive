@@ -17,9 +17,6 @@ class EditNoteViewBody extends StatefulWidget {
 }
 
 class _EditNoteViewBodyState extends State<EditNoteViewBody> {
-  // TextEditingController titleController = TextEditingController();
-  //
-  // TextEditingController subTitleController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     TextEditingController? titleController =
@@ -33,6 +30,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
       child: Column(
         children: [
           CustomTextFormField(
+            initialValue: widget.note.title,
             hint: 'Title',
             controller: titleController,
           ),
@@ -40,6 +38,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             height: 20.0,
           ),
           CustomTextFormField(
+            initialValue: widget.note.subtitle,
             hint: 'Content',
             maxLines: 5,
             controller: subTitleController,

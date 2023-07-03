@@ -8,17 +8,19 @@ class CustomTextFormField extends StatelessWidget {
     this.maxLines = 1,
     this.onSaved,
     required this.controller,
+    this.initialValue = '',
   });
 
   final String hint;
   final int maxLines;
   final void Function(String?)? onSaved;
   final TextEditingController controller;
+  final String initialValue;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
+      controller: controller..text = initialValue,
       validator: (value) {
         //todo
         if (value?.isEmpty ?? true) {

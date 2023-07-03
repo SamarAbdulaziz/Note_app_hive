@@ -19,8 +19,8 @@ class AddNoteForm extends StatefulWidget {
 class _AddNoteFormState extends State<AddNoteForm> {
   final GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
-  final TextEditingController titleController = TextEditingController();
-  final TextEditingController subTitleController = TextEditingController();
+  // final TextEditingController titleController = TextEditingController();
+  // final TextEditingController subTitleController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +29,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
         // TODO: implement listener
       },
       builder: (context, state) {
+        TextEditingController? titleController =
+            BlocProvider.of<AddNoteCubit>(context).titleController;
+
+        TextEditingController subTitleController =
+            BlocProvider.of<AddNoteCubit>(context).subTitleController;
         return Form(
           key: formKey,
           autovalidateMode: autoValidateMode,
