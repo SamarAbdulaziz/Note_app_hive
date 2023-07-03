@@ -13,6 +13,7 @@ class AddNoteCubit extends Cubit<AddNoteState> {
   TextEditingController titleController = TextEditingController();
 
   TextEditingController subTitleController = TextEditingController();
+  Color? color = Colors.pink[100];
 
   addNote(NotesModel note) {
     try {
