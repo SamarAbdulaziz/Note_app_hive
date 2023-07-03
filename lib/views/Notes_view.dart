@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app_tharwat_samy/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app_tharwat_samy/views/widgets/custom_icon.dart';
 import 'package:notes_app_tharwat_samy/views/widgets/notes_view_body.dart';
 
@@ -13,7 +11,7 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
@@ -21,8 +19,8 @@ class NotesView extends StatelessWidget {
           'Notes',
           style: TextStyle(fontSize: 28.0),
         ),
-        actions: const [
-          CustomIcon(icon: Icons.search),
+        actions: [
+          CustomIcon(icon: Icons.search, onPress: () {}),
         ],
       ),
       body: const NotesViewBody(),

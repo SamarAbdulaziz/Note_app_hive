@@ -4,9 +4,11 @@ class CustomIcon extends StatelessWidget {
   const CustomIcon({
     super.key,
     required this.icon,
+    required this.onPress,
   });
 
   final IconData icon;
+  final void Function()? onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class CustomIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.0),
       ),
       child: IconButton(
-        onPressed: () {},
+        onPressed: onPress,
         icon: Icon(
           icon,
         ),
