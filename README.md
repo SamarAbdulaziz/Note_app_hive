@@ -1,16 +1,17 @@
-# notes_app_tharwat_samy
+# notes_app
 
 A new Flutter project.
 
-## Getting Started
+## Screen Shots
+<img src="https://github.com/user-attachments/assets/bd5e5475-5f4e-476a-8133-daeb3056b768" width=30% height=30%>
 
-This project is a starting point for a Flutter application.
+<img src="https://github.com/user-attachments/assets/e11e2419-342a-4130-a1d3-b3a32270f54b" width=30% height=30%>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<img src="https://github.com/user-attachments/assets/94b14ba5-fa10-4af0-8a41-1d8fbfa816bf" width=30% height=30%>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://github.com/user-attachments/assets/9ecfcfa1-2fbb-4a02-8540-454a0f653583" width=30% height=30%>
+
+<img src="https://github.com/user-attachments/assets/8eab8303-fea3-44fc-8f2e-193a5ace9be5" width=30% height=30%>
+
+<img src="https://github.com/user-attachments/assets/e11e2419-342a-4130-a1d3-b3a32270f54b" width=30% height=30%>
